@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock with Date Progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Add this modal HTML at the very beginning of the body -->
+    <div id="shortcutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Shortcut</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="shortcutName">Name:</label>
+                    <input type="text" id="shortcutName" placeholder="e.g., YouTube">
+                </div>
+                <div class="form-group">
+                    <label for="shortcutUrl">URL:</label>
+                    <input type="text" id="shortcutUrl" placeholder="e.g., https://youtube.com">
+                </div>
+                <div class="modal-buttons">
+                    <button id="saveShortcut" class="save-btn">Save</button>
+                    <button id="cancelShortcut" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this shortcuts section before the main-container -->
+    <div class="shortcuts-section">
+        <div class="shortcuts-header">
+            <h3>Shortcuts</h3>
+        </div>
+        <div id="shortcutsList" class="shortcuts-list">
+            <!-- Shortcuts will be added here dynamically -->
+        </div>
+        <button id="addShortcut" class="add-shortcut-btn">+</button>
+    </div>
+
+    <button id="toggleNotes" class="toggle-notes">📝</button>
+
+
+    <!-- Add notes section -->
+    <div id="notesSection" class="notes-section">
+        <div class="notes-header">
+            <h3>Notes</h3>
+            <button class="close-notes">&times;</button>
+        </div>
+        <div class="notes-tabs">
+            <button class="tab-btn active" data-tab="tasks">Tasks</button>
+            <button class="tab-btn" data-tab="queries">Queries</button>
+        </div>
+        <div class="tab-content">
+            <div id="tasks" class="tab-pane active">
+                <div class="add-item">
+                    <input type="text" id="newTask" placeholder="Add new task...">
+                    <button id="addTask">Add</button>
+                </div>
+                <div id="tasksList" class="items-list"></div>
+            </div>
+            <div id="queries" class="tab-pane">
+                <div class="add-item">
+                    <input type="text" id="newQuery" placeholder="Add new query...">
+                    <button id="addQuery">Add</button>
+                </div>
+                <div id="queriesList" class="items-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <div class="clock-section">
+            <div class="clock-container">
+                <div class="clock-face">
+                    <!-- Clock numbers -->
+                    <div class="number number1">1</div>
+                    <div class="number number2">2</div>
+                    <div class="number number3">3</div>
+                    <div class="number number4">4</div>
+                    <div class="number number5">5</div>
+                    <div class="number number6">6</div>
+                    <div class="number number7">7</div>
+                    <div class="number number8">8</div>
+                    <div class="number number9">9</div>
+                    <div class="number number10">10</div>
+                    <div class="number number11">11</div>
+                    <div class="number number12">12</div>
+
+                    <!-- Clock hands -->
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="center-dot"></div>
+                </div>
+            </div>
+        </div>
+        <div class="date-section">
+            <div class="date-container">
+                <div class="current-day">Wednesday</div>
+                <div class="current-date">March 20, 2024</div>
+                <div class="week-progress">
+                    <div class="progress-text">Week Progress</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-percentage">60%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
